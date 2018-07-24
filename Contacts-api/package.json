@@ -1,0 +1,70 @@
+{
+  "name": "contacts-api",
+  "version": "0.0.3",
+  "description": "Simple contacts api.",
+  "homepage": "https://github.com/jtdarkly/Contacts-api",
+  "main": "index.js",
+  "author": {
+    "name": "Jamie Tudor",
+    "email": "jtdarkly@gmail.com",
+    "url": "https://jtdarkly.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtdarkly/Contacts-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jtdarkly/Contacts-api/issues"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node cluster.js",
+    "dev": "nodemon index.js",
+    "test": "npm run test:all",
+    "test:all": "npm run test:unit && npm run test:features",
+    "test:unit": "cross-env NODE_PATH=. NODE_ENV=test mocha --opts test/mocha.opts.unit",
+    "test:features": "cross-env NODE_PATH=. NODE_ENV=test mocha --opts test/mocha.opts.features",
+    "sequelize": "cross-env NODE_PATH=. sequelize",
+    "console": "cross-env NODE_PATH=. node src/interfaces/console/index.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-mocha": "^5.1.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jsdoc": "^3.5.5",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3"
+  },
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "chai-things": "^0.2.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-validator": "^5.2.0",
+    "factory-girl": "^5.0.2",
+    "helmet": "^3.13.0",
+    "lodash": "^4.17.10",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.5.3",
+    "pm2": "^3.0.0",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0",
+    "swagger-ui-express": "^3.0.10",
+    "winston": "^3.0.0",
+    "xmlbuilder": "^10.0.0"
+  }
+}

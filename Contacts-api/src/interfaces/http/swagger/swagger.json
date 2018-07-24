@@ -1,0 +1,241 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Contacts-api",
+    "license": {
+      "name": "none"
+    }
+  },
+  "host": "jamietudor.me",
+  "basePath": "/api/v1.0",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "text/plain",
+    "application/json",
+    "text/xml"
+  ],
+  "paths": {
+    "/contacts": {
+      "get": {
+        "summary": "List all the contacts",
+        "responses": {
+          "200": {
+            "description": "Listed contacts",
+            "headers": {
+              "Content-Length": {
+                "type": "string"
+              },
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Contacts"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a contact",
+        "responses": {
+          "201": {
+            "description": "Created contact",
+            "headers": {
+              "Content-Length": {
+                "type": "string"
+              },
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Contacts"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{entryId}": {
+      "get": {
+        "summary": "Select a contact",
+        "responses": {
+          "200": {
+            "description": "Returned contact",
+            "headers": {
+              "Content-Length": {
+                "type": "string"
+              },
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Contacts"
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a contact",
+        "responses": {
+          "204": {
+            "description": "Deleted contact",
+            "headers": {
+              "Content-Length": {
+                "type": "string"
+              },
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Contacts"
+            }
+          }
+        }
+      }
+    },
+
+    "/contacts/{$entryId}/primary": {
+      "get": {
+        "summary": "Select primary info for a contact",
+        "responses": {
+          "200": {
+            "description": "Returned primary info for a contact",
+            "headers": {
+              "Content-Length": {
+                "type": "string"
+              },
+              "Content-Type": {
+                "type": "string"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/Contacts"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Contact": {
+      "required": [
+        "entryId"
+      ],
+      "properties": {
+        "entryId": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updateAt": {
+          "type": "string"
+        },
+        "Names": {
+          "type": "array",
+          "$ref": "#/definitions/Name"
+        },
+        "Addresses": {
+          "type": "array",
+          "$ref": "#/definitions/Address"
+        }
+      }
+    },
+    "Contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Contact"
+      }
+    },
+    "Name": {
+      "required": [
+        "nameId",
+        "primary"
+      ],
+      "properties": {
+        "nameId": {
+          "type": "integer"
+        },
+        "primary": {
+          "type": "boolean"
+        },
+        "honorfic": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "middleName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "Names": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Name"
+      }
+    },
+    "Address": {
+      "required": [
+        "addressId",
+        "primary"
+      ],
+      "properties": {
+        "addressId": {
+          "type": "integer"
+        },
+        "primary": {
+          "type": "boolean"
+        },
+        "addressL1": {
+          "type": "string"
+        },
+        "addressL2": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      }
+    },
+    "Addresses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Address"
+      }
+    }
+  }
+}
