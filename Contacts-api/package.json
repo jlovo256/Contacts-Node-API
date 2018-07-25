@@ -65,6 +65,7 @@
     "sequelize-cli": "^4.0.0",
     "swagger-ui-express": "^3.0.10",
     "winston": "^3.0.0",
-    "xmlbuilder": "^10.0.0"
+    "xmlbuilder": "^10.0.0",
+    "yamljs": "^0.3.0"
   }
 }

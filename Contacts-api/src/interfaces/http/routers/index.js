@@ -4,8 +4,9 @@ const { Router } = require('express');
 // middleware
 const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
 const devLogger = require('../middleware/devLogger');
-const swaggerDocument = require('../swagger/swagger.json');
+const swaggerDocument = YAML.load('./swagger.yaml'); // root
 // error handlers
 const notFound = require('../errors/notFound');
 const errorHandler = require('../errors/errorHandler');

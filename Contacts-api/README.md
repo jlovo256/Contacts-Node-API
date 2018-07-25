@@ -3,7 +3,7 @@
  If you haven't already, <a href="https://github.com/jtdarkly/Contacts-api/blob/master/README.md">read this first</a>.
  
  ## What Is It?
- Contacts-api is a simple storage app for contact information.  Currently, it only stores names and physical addresses.  One entry can have multiple names and addresses, because people move and/or change their names sometimes.
+ Contacts-api is a simple storage app for contact information.  Currently, it only stores names and physical addresses.  One contact can have multiple names and addresses, because people move and/or change their names sometimes.
  
  ## API Definition
 <table>
@@ -39,42 +39,42 @@
         <td>POST</td>
         <td>/api/v1.0/contacts</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Creates a new entry; if name(s) and/or address(es) are includes, will create associated names and addresses.  When an entry is created, a Location header is returned.  It provides the URL where the newly created entry can be accessed.</td>
+        <td>Creates a new contact; if name(s) and/or address(es) are includes, will create associated names and addresses.  When a contact is created, a Location header is returned.  It provides the URL where the newly created contact can be accessed.</td>
         <td>201 Created,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns a single entry for the selected entryId, and the associated names and addresses.  If there is no such entry, it returns 404.</td>
+        <td>Returns a single contact for the selected entryId, and the associated names and addresses.  If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> <br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/primary</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns a single entry for the selected entryId, and the primary associated name and address.  If there is no such entry, it returns 404.</td>
+        <td>Returns a single contact for the selected entryId, and the primary associated name and address.  If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>DELETE</td>
         <td>/api/v1.0/contacts/{entryId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Deletes an existing entry; if an entry with the provided identifier does not exist, it returns 404.</td>
+        <td>Deletes an existing contact; if an contact with the provided identifier does not exist, it returns 404.</td>
         <td>204 No Content,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
         </tr>
     <tr>
         <td>POST</td>
         <td>/api/v1.0/contacts/{entryId}/names</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Creates a new name in the selected entry. When a name is created, a Location header is returned.  It provides the URL where the newly created name can be accessed.</td>
+        <td>Creates a new name in the selected contact. When a name is created, a Location header is returned.  It provides the URL where the newly created name can be accessed.</td>
         <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/names</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns all the names for the selected entryId. If there is no such entry, it returns 404.</td>
+        <td>Returns all the names for the selected entryId. If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
@@ -102,14 +102,14 @@
         <td>POST</td>
         <td>/api/v1.0/contacts/{entryId}/addresses</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Creates a new address in the selected entry. When an address is created, a Location header is returned.  It provides the URL where the newly created address can be accessed.</td>
+        <td>Creates a new address in the selected contact. When an address is created, a Location header is returned.  It provides the URL where the newly created address can be accessed.</td>
         <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/addresses</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns all the addresses for the selected entryId. If there is no such entry, it returns 404.</td>
+        <td>Returns all the addresses for the selected entryId. If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>

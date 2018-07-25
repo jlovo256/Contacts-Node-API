@@ -8,10 +8,10 @@
     },
     "description": "This is a sample Node Rest API."
   },
-  "host": "jamietudor.me",
+  "host": "127.0.0.1:1337",
   "basePath": "/api/v1.0",
   "schemes": [
-    "https"
+    "http"
   ],
   "consumes": [
     "application/json"
@@ -288,7 +288,7 @@
         }
       }
     },
-    "/contacts/{$entryId}/primary": {
+    "/contacts/{entryId}/primary": {
       "get": {
         "summary": "Select primary info for a contact",
         "tags": [
@@ -369,7 +369,7 @@
         }
       }
     },
-    "/contacts/{$entryId}/names": {
+    "/contacts/{entryId}/names": {
       "get": {
         "summary": "List all the names for a contact",
         "tags": [
@@ -496,7 +496,7 @@
         }
       }
     },
-    "/contacts/{entryId}/names/{$nameId}": {
+    "/contacts/{entryId}/names/{nameId}": {
       "get": {
         "summary": "Select a name in a contact",
         "tags": [
@@ -776,7 +776,7 @@
         }
       }
     },
-    "/contacts/{$entryId}/addresses": {
+    "/contacts/{entryId}/addresses": {
       "get": {
         "summary": "List all the addresses for a contact",
         "tags": [
@@ -903,7 +903,7 @@
         }
       }
     },
-    "/contacts/{entryId}/addresses/{$addressId}": {
+    "/contacts/{entryId}/addresses/{addressId}": {
       "get": {
         "summary": "Select an address in a contact",
         "tags": [
