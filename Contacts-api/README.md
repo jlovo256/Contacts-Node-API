@@ -1,6 +1,6 @@
 # Contacts-Api
  
- If you haven't already, <a href="https://github.com/jtdarkly/Contacts-api/blob/master/README.md">read this first</a>.
+ If you haven't already, <a href="https://github.com/jtdarkly/Contacts-Node-API/blob/master/README.md">read this first</a>.
  
  ## What Is It?
  Contacts-api is a simple storage app for contact information.  Currently, it only stores names and physical addresses.  One contact can have multiple names and addresses, because people move and/or change their names sometimes.

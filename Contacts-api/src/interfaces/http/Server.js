@@ -1,7 +1,20 @@
 'use strict';
 
+const path = require('path');
+const appRoot = require('app-root-path').toString();
+
 const express = require('express');
 const helmet = require('helmet');
+
+// static directory options
+const staticOptions = {
+  dotfiles: 'ignore',
+  extensions: ['json', 'yaml'],
+  etag: false,
+  maxAge: '1d',
+  redirect: false,
+};
+
 
 class Server {
   constructor({ config, router, logger }) {
@@ -17,7 +30,9 @@ class Server {
           defaultSrc: ["'self'"],
         },
       }));
-    this.express.use(router);
+    this.express
+      .use('/static', express.static(path.join(appRoot, 'public'), staticOptions))
+      .use(router);
   }
 
   start() {

@@ -198,7 +198,8 @@
     <Content Include="config\database.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\interfaces\http\swagger\swagger.json">
+    <Content Include="public\swagger.yaml" />
+    <Content Include="public\swagger.json">
       <SubType>Code</SubType>
     </Content>
     <Content Include="swagger.yaml">
@@ -228,7 +229,7 @@
     <Folder Include="src\infrastructure\repositories\" />
     <Folder Include="src\infrastructure\repositories\sequelizeRepos\" />
     <Folder Include="src\interfaces\http\errors\" />
-    <Folder Include="src\interfaces\http\swagger\" />
+    <Folder Include="public\" />
     <Folder Include="src\interfaces\http\views\" />
     <Folder Include="src\interfaces\http\routers\" />
     <Folder Include="src\interfaces\http\" />

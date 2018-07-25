@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
 const devLogger = require('../middleware/devLogger');
-const swaggerDocument = YAML.load('./swagger.yaml'); // root
+
+const swaggerDocument = YAML.load('./public/swagger.yaml'); // root
 // error handlers
 const notFound = require('../errors/notFound');
 const errorHandler = require('../errors/errorHandler');
@@ -19,7 +20,6 @@ const {
 } = require('../controllers').ContactController;
 // sub-routers
 const apiRouter = require('./apiRoutes');
-
 
 module.exports = ((logger) => {
   const router = Router();

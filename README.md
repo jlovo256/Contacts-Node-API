@@ -1,6 +1,6 @@
 # Contacts-api
 
-A simple demostration of a Node API.  <a href="https://github.com/jtdarkly/Contacts-api/blob/master/Contacts-api/README.md">Yeah, but what is it?</a>
+A simple demostration of a Node API.  <a href="https://github.com/jtdarkly/Contacts-Node-API/blob/master/Contacts-api/README.md">Yeah, but what is it?</a>  <a href="https://jamietudor.me/api-docs/">Swagger UI</a>.
 
 ### Important Things to Note
 - There is a Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file">solution file</a>, but it will not load in the Mac version or Visual Studio Code.  Loading in another Windows version is untested.
@@ -183,7 +183,7 @@ npm run test:unit
 ```
 ## More Info About the App Itself
 
-The features and functionality are unexciting.  This is meant to be a demonstration of a REST Api, not a revolutionary feature.  <a href="https://github.com/jtdarkly/Contacts-api/blob/master/Contacts-api/API-README.md">But read more about it here.</a>
+The features and functionality are unexciting.  This is meant to be a demonstration of a REST Api, not a revolutionary feature.  <a href="https://github.com/jtdarkly/Contacts-Node-API/blob/master/Contacts-api/README.md">But read more about it here.</a>
 
 ## Dependencies
 - [app-root-path](https://github.com/inxilpro/node-app-root-path)
@@ -207,6 +207,7 @@ The features and functionality are unexciting.  This is meant to be a demonstrat
 - [swagger-ui-express](https://github.com/scottie1984/swagger-ui-express)
 - [winston](https://github.com/winstonjs/winston)
 - [xmlbuilder](https://github.com/oozcitak/xmlbuilder-js)
+- [yamljs](https://github.com/jeremyfa/yaml.js)
 ### Dev
 
 - [eslint](https://github.com/eslint/eslint)
