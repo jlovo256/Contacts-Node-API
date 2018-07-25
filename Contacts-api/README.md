@@ -33,28 +33,28 @@
         <td>/api/v1.0/contacts</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Returns all the contacts, and their associated names and addresses.</td>
-        <td>200 OK,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>POST</td>
         <td>/api/v1.0/contacts</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Creates a new entry; if name(s) and/or address(es) are includes, will create associated names and addresses.  When an entry is created, a Location header is returned.  It provides the URL where the newly created entry can be accessed.</td>
-        <td>201 Created,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>201 Created,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Returns a single entry for the selected entryId, and the associated names and addresses.  If there is no such entry, it returns 404.</td>
-        <td>200 OK,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br />404 NOT FOUND,<br /> <br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/primary</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Returns a single entry for the selected entryId, and the primary associated name and address.  If there is no such entry, it returns 404.</td>
-        <td>200 OK,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>DELETE</td>
@@ -68,28 +68,28 @@
         <td>/api/v1.0/contacts/{entryId}/names</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Creates a new name in the selected entry. When a name is created, a Location header is returned.  It provides the URL where the newly created name can be accessed.</td>
-        <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/names</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Returns all the names for the selected entryId. If there is no such entry, it returns 404.</td>
-        <td>200 OK,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE <br /> 500 Internal Server Error</td>
+        <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/names/{nameId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Returns a single name for the selected nameId, associated with the entryId.  If there is no such name, it returns 404.</td>
-        <td>200 OK,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>PUT</td>
         <td>/api/v1.0/contacts/{entryId}/names/{nameId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Updates an existing name; if a name for the provided identifier does not exist, it returns 404.</td>
-        <td>200 OK,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>DELETE</td>
@@ -103,28 +103,28 @@
         <td>/api/v1.0/contacts/{entryId}/addresses</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Creates a new address in the selected entry. When an address is created, a Location header is returned.  It provides the URL where the newly created address can be accessed.</td>
-        <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/addresses</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Returns all the addresses for the selected entryId. If there is no such entry, it returns 404.</td>
-        <td>200 OK,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
         <td>/api/v1.0/contacts/{entryId}/addresses/{addressId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Returns a single address for the selected addressId, associated with the entryId.  If there is no such address, it returns 404.</td>
-        <td>200 OK,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>PUT</td>
         <td>/api/v1.0/contacts/{entryId}/addresses/{addressId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Updates an existing address; if an address for the provided identifier does not exist, it returns 404.</td>
-        <td>200 OK,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 406 NOT ACCEPTABLE,<br /> 500 Internal Server Error</td>
+        <td>200 OK,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>DELETE</td>
