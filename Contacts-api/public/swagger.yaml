@@ -18,7 +18,11 @@ paths:
   /contacts:
     get:
       summary: Returns a list all the contacts
-      description: Returns all the contacts, and their associated names and addresses.
+      tags:
+        - Contacts
+      description: >
+        Returns all the contacts, and their 
+        associated names and addresses.
       responses:
         '200':
           description: OK
@@ -45,8 +49,16 @@ paths:
               schema:
                 type: string 
     post:
-      summary:
-      description: Creates a new contact; if name(s) and/or address(es) are includes, will create associated names and addresses. When a contact is created, a Location header is returned. It provides the URL where the newly created contact can be accessed.
+      summary: Creates a contact
+      tags:
+        - Contacts
+      description: > 
+        Creates a new contact; if name(s) 
+        and/or address(es) are includes, 
+        will create associated names and addresses. 
+        When a contact is created, a Location 
+        header is returned. It provides the URL 
+        where the newly created contact can be accessed.
       requestBody:
         required: true
         content:
@@ -93,7 +105,12 @@ paths:
   /contacts/{contactId}:
     get:
       summary: Represents a contact
-      description: Returns a single contact for the selected contactId, and the associated names and addresses. If there is no such contact, it returns 404.
+      tags:
+        - Contacts
+      description: > 
+        Returns a single contact for the selected contactId, 
+        and the associated names and addresses. 
+        If there is no such contact, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
       responses:
@@ -135,7 +152,12 @@ paths:
                 type: string 
     delete:
       summary: Deletes a contact
-      description: Deletes an existing contact; if an contact with the provided identifier does not exist, it returns 404.
+      tags:
+        - Contacts
+      description: > 
+        Deletes an existing contact; 
+        if an contact with the provided identifier 
+        does not exist, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
       responses:
@@ -168,7 +190,13 @@ paths:
   /contacts/{contactId}/primary:
     get:
       summary: Represents primary contact information
-      description: Returns a single contact for the selected contactId, and the primary associated name and address. If there is no such contact, it returns 404.
+      tags:
+        - Contacts
+      description: > 
+        Returns a single contact for the selected contactId, 
+        and the primary associated name 
+        and address. If there is no such contact, 
+        it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
       responses:
@@ -211,7 +239,11 @@ paths:
   /contacts/{contactId}/names:
     get:
       summary: Represents all names in a contact
-      description: Returns all the names for the selected contactId. If there is no such contact, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Returns all the names for the selected contactId. 
+        If there is no such contact, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
       responses:
@@ -253,7 +285,13 @@ paths:
                 type: string 
     post:
       summary: Creates a name in a contact
-      description: Creates a new name in the selected contact. When a name is created, a Location header is returned. It provides the URL where the newly created name can be accessed.
+      tags:
+        - Contacts
+      description: >
+        Creates a new name in the selected contact. 
+        When a name is created, a Location header 
+        is returned. It provides the URL where the newly 
+        created name can be accessed.
       parameters:
         - $ref: '#/components/parameters/contactId'
       requestBody:
@@ -314,7 +352,12 @@ paths:
   /contacts/{contactId}/names/{nameId}:
     get:
       summary: Represents a name in a contact
-      description: Returns a single name for the selected nameId, associated with the contactId. If there is no such name, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Returns a single name for the selected nameId, 
+        associated with the contactId. 
+        If there is no such name, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/nameId'
@@ -357,7 +400,11 @@ paths:
                 type: string  
     put:
       summary: Updates a name in a contact
-      description: Updates an existing name; if a name for the provided identifier does not exist, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Updates an existing name; if a name for 
+        the provided identifier does not exist, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/nameId'
@@ -418,7 +465,11 @@ paths:
                 type: string 
     delete:
       summary: Deletes a name in a contact
-      description: Deletes a existing name; if a name with the provided identifier does not exist, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Deletes a existing name; if a name with the
+        provided identifier does not exist, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/nameId'
@@ -452,7 +503,11 @@ paths:
   /contacts/{contactId}/addresses:
     get:
       summary: Represents all addresses in a contact
-      description: Returns all the addresses for the selected contactId. If there is no such contact, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Returns all the addresses for the selected contactId. 
+        If there is no such contact, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
       responses:
@@ -494,7 +549,12 @@ paths:
                 type: string 
     post:
       summary: Creates an address in a contact
-      description: Creates a new address in the selected contact. When an address is created, a Location header is returned. It provides the URL where the newly created address can be accessed.
+      tags:
+        - Contacts
+      description: >
+        Creates a new address in the selected contact. 
+        When an address is created, a Location header is returned. 
+        It provides the URL where the newly created address can be accessed.
       parameters:
         - $ref: '#/components/parameters/contactId'
       requestBody:
@@ -555,7 +615,12 @@ paths:
   /contacts/{contactId}/addresses/{addressId}:
     get:
       summary: Represents an address in a contact
-      description: Returns a single address for the selected addressId, associated with the contactId. If there is no such address, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Returns a single address for the selected addressId, 
+        associated with the contactId. 
+        If there is no such address, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/addressId'
@@ -598,7 +663,11 @@ paths:
                 type: string 
     put:
       summary: Updates an address in a contact
-      description: Updates an existing address; if an address for the provided identifier does not exist, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Updates an existing address; if an address for 
+        the provided identifier does not exist, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/addressId'
@@ -659,7 +728,11 @@ paths:
                 type: string 
     delete:
       summary: Deletes an address in a contact
-      description: Deletes a existing address; if an address with the provided identifier does not exist, it returns 404.
+      tags:
+        - Contacts
+      description: >
+        Deletes a existing address; if an address with 
+        the provided identifier does not exist, it returns 404.
       parameters:
         - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/addressId'
