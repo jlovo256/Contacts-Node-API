@@ -29,7 +29,7 @@ const {
  * Subrouter for Entries
  */
 
-router.param('entryId', validateEntryId);
+router.param('contactId', validateEntryId);
 
 router.use(bodySanitizerDeep(publicParams[0], publicParamsNames));
 router.use(bodySanitizerDeep(publicParams[1], publicParamsAddresses));
@@ -39,16 +39,16 @@ router.route('/')
   .post(createEntry)
   .all(onlyTheseMethods('GET, POST'));
 
-router.route('/:entryId')
+router.route('/:contactId')
   .get(retrieveEntry)
   .delete(deleteEntry)
   .all(onlyTheseMethods('GET, DELETE'));
 
-router.route('/:entryId/primary')
+router.route('/:contactId/primary')
   .get(retrieveEntryPrimary)
   .all(onlyTheseMethods('GET'));
 
-router.use('/:entryId/names', namesRouter);
-router.use('/:entryId/addresses', addressesRouter);
+router.use('/:contactId/names', namesRouter);
+router.use('/:contactId/addresses', addressesRouter);
 
 module.exports = router;

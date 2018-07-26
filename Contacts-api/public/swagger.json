@@ -134,7 +134,7 @@
         }
       }
     },
-    "/contacts/{entryId}": {
+    "/contacts/{contactId}": {
       "get": {
         "summary": "Select a contact",
         "tags": [
@@ -142,7 +142,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -221,7 +221,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -288,7 +288,7 @@
         }
       }
     },
-    "/contacts/{entryId}/primary": {
+    "/contacts/{contactId}/primary": {
       "get": {
         "summary": "Select primary info for a contact",
         "tags": [
@@ -296,7 +296,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -369,7 +369,7 @@
         }
       }
     },
-    "/contacts/{entryId}/names": {
+    "/contacts/{contactId}/names": {
       "get": {
         "summary": "List all the names for a contact",
         "tags": [
@@ -377,7 +377,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -436,7 +436,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -496,7 +496,7 @@
         }
       }
     },
-    "/contacts/{entryId}/names/{nameId}": {
+    "/contacts/{contactId}/names/{nameId}": {
       "get": {
         "summary": "Select a name in a contact",
         "tags": [
@@ -504,7 +504,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -590,7 +590,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -702,7 +702,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -776,7 +776,7 @@
         }
       }
     },
-    "/contacts/{entryId}/addresses": {
+    "/contacts/{contactId}/addresses": {
       "get": {
         "summary": "List all the addresses for a contact",
         "tags": [
@@ -784,7 +784,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -843,7 +843,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -903,7 +903,7 @@
         }
       }
     },
-    "/contacts/{entryId}/addresses/{addressId}": {
+    "/contacts/{contactId}/addresses/{addressId}": {
       "get": {
         "summary": "Select an address in a contact",
         "tags": [
@@ -911,7 +911,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -997,7 +997,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,
@@ -1109,7 +1109,7 @@
         ],
         "parameters": [
           {
-            "name": "entryId",
+            "name": "contactId",
             "in": "path",
             "type": "integer",
             "required": true,

@@ -13,9 +13,9 @@ const EntitySuperClass = require('./EntitySuperClass');
  * @returns {Entry}
  * */
 class Entry extends EntitySuperClass {
-  constructor(id, entryId, createdAt, updatedAt, Names, Addresses) {
+  constructor(id, contactId, createdAt, updatedAt, Names, Addresses) {
     super(id, {
-      entryId,
+      contactId,
       createdAt,
       updatedAt,
       Names,

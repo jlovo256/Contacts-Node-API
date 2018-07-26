@@ -102,7 +102,7 @@ module.exports.findByModelIdOpts = findByModelIdOpts;
 
 /**
  *
- * @param {number} nameId
+ * @param {number} entryId
  * @param {number} id
  * @returns {Promise}
  */

@@ -67,14 +67,14 @@ module.exports = (Entry, Name, Address) => {
    * @param {string} entryId
    * @returns {Function} next
    */
-  function validateEntryId(req, res, next, entryId) {
-    return Entry.getByModelId(entryId)
+  function validateEntryId(req, res, next, contactId) {
+    return Entry.getByModelId(contactId)
       .then((entry) => {
         if (entry instanceof Error) {
           throw new Error('invalid entry');
         }
         req.entry = {
-          entryId: entry.get('entryId'),
+          contactId: entry.get('contactId'),
           id: entry.id,
         };
         return next();
@@ -138,7 +138,7 @@ module.exports = (Entry, Name, Address) => {
         // find a better way
         contact.dataValues.Addresses = addressesSet;
         // URI locattion header
-        res.location(`/api/v1.0/contacts/${contact.dataValues.entryId}`);
+        res.location(`/api/v1.0/contacts/${contact.dataValues.contactId}`);
         return view(req, res, contact, 201);
       })
       .catch(err => view(req, res, err.message, 400));
@@ -202,7 +202,7 @@ module.exports = (Entry, Name, Address) => {
     // for creating the contact to send back
     let contact = {};
 
-    return Entry.getByModelId(req.entry.entryId)
+    return Entry.getByModelId(req.entry.contactId)
       .then((entry) => {
         contact = entry;
         return Name.getAllById(entry.id);
@@ -232,7 +232,7 @@ module.exports = (Entry, Name, Address) => {
   function retrieveEntryPrimary(req, res) {
     // for creating the contact to send back
     let contact = {};
-    return Entry.getByModelId(req.entry.entryId)
+    return Entry.getByModelId(req.entry.contactId)
       .then((entry) => {
         contact = entry;
         return Name.getPrimaryById(req.entry.id);
@@ -256,7 +256,7 @@ module.exports = (Entry, Name, Address) => {
    * @returns {Function} view
    */
   function deleteEntry(req, res) {
-    return Entry.deleteOne(req.entry.entryId)
+    return Entry.deleteOne(req.entry.contactId)
       .then(() => res.sendStatus(204))
       .catch(err => view(req, res, err.message, 404));
   }

@@ -44,91 +44,91 @@
     </tr>
     <tr>
         <td>GET</td>
-        <td>/api/v1.0/contacts/{entryId}</td>
+        <td>/api/v1.0/contacts/{contactId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns a single contact for the selected entryId, and the associated names and addresses.  If there is no such contact, it returns 404.</td>
+        <td>Returns a single contact for the selected contactId, and the associated names and addresses.  If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> <br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
-        <td>/api/v1.0/contacts/{entryId}/primary</td>
+        <td>/api/v1.0/contacts/{contactId}/primary</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns a single contact for the selected entryId, and the primary associated name and address.  If there is no such contact, it returns 404.</td>
+        <td>Returns a single contact for the selected contactId, and the primary associated name and address.  If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>DELETE</td>
-        <td>/api/v1.0/contacts/{entryId}</td>
+        <td>/api/v1.0/contacts/{contactId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Deletes an existing contact; if an contact with the provided identifier does not exist, it returns 404.</td>
         <td>204 No Content,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
         </tr>
     <tr>
         <td>POST</td>
-        <td>/api/v1.0/contacts/{entryId}/names</td>
+        <td>/api/v1.0/contacts/{contactId}/names</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Creates a new name in the selected contact. When a name is created, a Location header is returned.  It provides the URL where the newly created name can be accessed.</td>
         <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
-        <td>/api/v1.0/contacts/{entryId}/names</td>
+        <td>/api/v1.0/contacts/{contactId}/names</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns all the names for the selected entryId. If there is no such contact, it returns 404.</td>
+        <td>Returns all the names for the selected contactId. If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
-        <td>/api/v1.0/contacts/{entryId}/names/{nameId}</td>
+        <td>/api/v1.0/contacts/{contactId}/names/{nameId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns a single name for the selected nameId, associated with the entryId.  If there is no such name, it returns 404.</td>
+        <td>Returns a single name for the selected nameId, associated with the contactId.  If there is no such name, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>PUT</td>
-        <td>/api/v1.0/contacts/{entryId}/names/{nameId}</td>
+        <td>/api/v1.0/contacts/{contactId}/names/{nameId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Updates an existing name; if a name for the provided identifier does not exist, it returns 404.</td>
         <td>200 OK,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>DELETE</td>
-        <td>/api/v1.0/contacts/{entryId}/names/{nameId}</td>
+        <td>/api/v1.0/contacts/{contactId}/names/{nameId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Deletes a existing name; if a name with the provided identifier does not exist, it returns 404.</td>
         <td>204 No Content,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>POST</td>
-        <td>/api/v1.0/contacts/{entryId}/addresses</td>
+        <td>/api/v1.0/contacts/{contactId}/addresses</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Creates a new address in the selected contact. When an address is created, a Location header is returned.  It provides the URL where the newly created address can be accessed.</td>
         <td>201 Created,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
-        <td>/api/v1.0/contacts/{entryId}/addresses</td>
+        <td>/api/v1.0/contacts/{contactId}/addresses</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns all the addresses for the selected entryId. If there is no such contact, it returns 404.</td>
+        <td>Returns all the addresses for the selected contactId. If there is no such contact, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>GET</td>
-        <td>/api/v1.0/contacts/{entryId}/addresses/{addressId}</td>
+        <td>/api/v1.0/contacts/{contactId}/addresses/{addressId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
-        <td>Returns a single address for the selected addressId, associated with the entryId.  If there is no such address, it returns 404.</td>
+        <td>Returns a single address for the selected addressId, associated with the contactId.  If there is no such address, it returns 404.</td>
         <td>200 OK,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>PUT</td>
-        <td>/api/v1.0/contacts/{entryId}/addresses/{addressId}</td>
+        <td>/api/v1.0/contacts/{contactId}/addresses/{addressId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Updates an existing address; if an address for the provided identifier does not exist, it returns 404.</td>
         <td>200 OK,<br /> 400 BAD REQUEST,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>
     </tr>
     <tr>
         <td>DELETE</td>
-        <td>/api/v1.0/contacts/{entryId}/addresses/{addressId}</td>
+        <td>/api/v1.0/contacts/{contactId}/addresses/{addressId}</td>
         <td>text/plain,<br />application/json,<br />text/xml</td>
         <td>Deletes a existing address; if an address with the provided identifier does not exist, it returns 404.</td>
         <td>204 No Content,<br />404 NOT FOUND,<br /> 500 Internal Server Error</td>

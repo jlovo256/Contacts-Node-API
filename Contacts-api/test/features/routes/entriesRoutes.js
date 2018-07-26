@@ -15,7 +15,7 @@ module.exports = ((server, chai, expect) => {
             expect(res.header).to.have.property('content-type')
               .eql('text/plain; charset=utf-8');
             expect(res).to.have.property('text');
-            expect(res.text).to.contain('entryId');
+            expect(res.text).to.contain('contactId');
             expect(res.text).to.contain('createdAt');
             expect(res.text).to.contain('updatedAt');
             expect(res.text).to.contain('Names');
@@ -52,7 +52,7 @@ module.exports = ((server, chai, expect) => {
               .eql('application/json; charset=utf-8');
             expect(res).to.have.property('body');
             expect(res.body).to.be.a('array');
-            expect(res.body).to.all.have.property('entryId');
+            expect(res.body).to.all.have.property('contactId');
             expect(res.body).to.all.have.property('createdAt');
             expect(res.body).to.all.have.property('updatedAt');
             expect(res.body).to.all.have.property('Names')
@@ -94,7 +94,7 @@ module.exports = ((server, chai, expect) => {
             expect(res.header).to.have.property('content-type')
               .eql('text/xml; charset=utf-8');
             expect(res).to.have.property('text');
-            expect(res.text).to.contain('entryId');
+            expect(res.text).to.contain('contactId');
             expect(res.text).to.contain('createdAt');
             expect(res.text).to.contain('updatedAt');
             expect(res.text).to.contain('Names');
@@ -151,7 +151,7 @@ module.exports = ((server, chai, expect) => {
               .eql('text/plain; charset=utf-8');
             expect(res.header).to.have.property('location');
             expect(res).to.have.property('text');
-            expect(res.text).to.contain('entryId');
+            expect(res.text).to.contain('contactId');
             expect(res.text).to.contain('createdAt');
             expect(res.text).to.contain('updatedAt');
             expect(res.text).to.contain('Names');
@@ -209,7 +209,7 @@ module.exports = ((server, chai, expect) => {
               .eql('application/json; charset=utf-8');
             expect(res.header).to.have.property('location');
             expect(res).to.have.property('body');
-            expect(res.body).to.have.property('entryId');
+            expect(res.body).to.have.property('contactId');
             expect(res.body).to.have.property('createdAt');
             expect(res.body).to.have.property('updatedAt');
             expect(res.body).to.have.property('Names')
@@ -262,7 +262,7 @@ module.exports = ((server, chai, expect) => {
             expect(res.header).to.have.property('content-type')
               .eql('text/plain; charset=utf-8');
             expect(res).to.have.property('text');
-            expect(res.text).to.contain('entryId');
+            expect(res.text).to.contain('contactId');
             expect(res.text).to.contain('createdAt');
             expect(res.text).to.contain('updatedAt');
             expect(res.text).to.contain('Names');
@@ -298,7 +298,7 @@ module.exports = ((server, chai, expect) => {
             expect(res.header).to.have.property('content-type')
               .eql('text/xml; charset=utf-8');
             expect(res).to.have.property('text');
-            expect(res.text).to.contain('entryId');
+            expect(res.text).to.contain('contactId');
             expect(res.text).to.contain('createdAt');
             expect(res.text).to.contain('updatedAt');
             expect(res.text).to.contain('Names');
@@ -334,7 +334,7 @@ module.exports = ((server, chai, expect) => {
             expect(res.header).to.have.property('content-type')
               .eql('application/json; charset=utf-8');
             expect(res).to.have.property('body');
-            expect(res.body).to.have.property('entryId');
+            expect(res.body).to.have.property('contactId');
             expect(res.body).to.have.property('createdAt');
             expect(res.body).to.have.property('updatedAt');
             expect(res.body).to.have.property('Names')
@@ -387,7 +387,7 @@ module.exports = ((server, chai, expect) => {
             expect(res.header).to.have.property('content-type')
               .eql('text/plain; charset=utf-8');
             expect(res).to.have.property('text');
-            expect(res.text).to.contain('entryId');
+            expect(res.text).to.contain('contactId');
             expect(res.text).to.contain('createdAt');
             expect(res.text).to.contain('updatedAt');
             expect(res.text).to.contain('Names');
@@ -424,7 +424,7 @@ module.exports = ((server, chai, expect) => {
             expect(res.header).to.have.property('content-type')
               .eql('application/json; charset=utf-8');
             expect(res).to.have.property('body');
-            expect(res.body).to.have.property('entryId');
+            expect(res.body).to.have.property('contactId');
             expect(res.body).to.have.property('createdAt');
             expect(res.body).to.have.property('updatedAt');
             expect(res.body).to.have.property('Names')

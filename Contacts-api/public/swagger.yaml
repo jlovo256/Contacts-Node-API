@@ -43,7 +43,7 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string
+                type: string 
     post:
       summary:
       description: Creates a new contact; if name(s) and/or address(es) are includes, will create associated names and addresses. When a contact is created, a Location header is returned. It provides the URL where the newly created contact can be accessed.
@@ -79,7 +79,7 @@ paths:
               schema:
                 type: string
         '5XX':
-          description: SERVER ERROR
+          description: Unexpected error
           content:
             application/json:
               schema:
@@ -89,13 +89,13 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string
-  /contacts/{entryId}:
+                type: string 
+  /contacts/{contactId}:
     get:
       summary: Represents a contact
-      description: Returns a single contact for the selected entryId, and the associated names and addresses. If there is no such contact, it returns 404.
+      description: Returns a single contact for the selected contactId, and the associated names and addresses. If there is no such contact, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
       responses:
         '200':
           description: OK
@@ -111,16 +111,16 @@ paths:
                 type: string
         '404':
           description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string
+           content:
+             application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+              text/xml:
+                schema:
+                  $ref: '#/components/schemas/Error'
+              text/plain:
+                schema:
+                  type: string
         '5XX':
           description: Unexpected error
           content:
@@ -137,22 +137,22 @@ paths:
       summary: Deletes a contact
       description: Deletes an existing contact; if an contact with the provided identifier does not exist, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
       responses:
         '204':
           description: OK No content
         '404':
           description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string
+           content:
+             application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+              text/xml:
+                schema:
+                  $ref: '#/components/schemas/Error'
+              text/plain:
+                schema:
+                  type: string
         '5XX':
           description: Unexpected error
           content:
@@ -164,13 +164,13 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string 
-  /contacts/{entryId}/primary:
+                type: string  
+  /contacts/{contactId}/primary:
     get:
       summary: Represents primary contact information
-      description: Returns a single contact for the selected entryId, and the primary associated name and address. If there is no such contact, it returns 404.
+      description: Returns a single contact for the selected contactId, and the primary associated name and address. If there is no such contact, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
       responses:
         '200':
           description: OK
@@ -186,16 +186,16 @@ paths:
                 type: string
         '404':
           description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string
+           content:
+             application/json:
+               schema:
+                 $ref: '#/components/schemas/Error'
+             text/xml:
+               schema:
+                 $ref: '#/components/schemas/Error'
+              text/plain:
+                schema:
+                  type: string
         '5XX':
           description: Unexpected error
           content:
@@ -207,13 +207,13 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string 
-  /contacts/{entryId}/names:
+                type: string  
+  /contacts/{contactId}/names:
     get:
       summary: Represents all names in a contact
-      description: Returns all the names for the selected entryId. If there is no such contact, it returns 404.
+      description: Returns all the names for the selected contactId. If there is no such contact, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
       responses:
         '200':
           description: OK
@@ -229,16 +229,16 @@ paths:
                 type: string
         '404':
           description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string
+           content:
+             application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+              text/xml:
+                schema:
+                  $ref: '#/components/schemas/Error'
+              text/plain:
+                schema:
+                  type: string
         '5XX':
           description: Unexpected error
           content:
@@ -255,7 +255,7 @@ paths:
       summary: Creates a name in a contact
       description: Creates a new name in the selected contact. When a name is created, a Location header is returned. It provides the URL where the newly created name can be accessed.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
       requestBody:
         required: true
         content:
@@ -286,21 +286,21 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string
+                type: string        
         '404':
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string
+           description: Not Found
+           content:
+             application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+             text/xml:
+                schema:
+                  $ref: '#/components/schemas/Error'
+             text/plain:
+                schema:
+                  type: string
         '5XX':
-          description: SERVER ERROR
+          description: Unexpected error
           content:
             application/json:
               schema:
@@ -310,13 +310,13 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string
-  /contacts/{entryId}/names/{nameId}:
+                type: string 
+  /contacts/{contactId}/names/{nameId}:
     get:
       summary: Represents a name in a contact
-      description: Returns a single name for the selected nameId, associated with the entryId. If there is no such name, it returns 404.
+      description: Returns a single name for the selected nameId, associated with the contactId. If there is no such name, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/nameId'
       responses:
         '200':
@@ -354,12 +354,12 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string 
+                type: string  
     put:
       summary: Updates a name in a contact
       description: Updates an existing name; if a name for the provided identifier does not exist, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/nameId'
       requestBody:
         required: true
@@ -398,7 +398,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-            application/xml:
+            text/xml:
               schema:
                 $ref: '#/components/schemas/Error'
             text/plain:
@@ -420,7 +420,7 @@ paths:
       summary: Deletes a name in a contact
       description: Deletes a existing name; if a name with the provided identifier does not exist, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/nameId'
       responses:
         '204':
@@ -449,12 +449,12 @@ paths:
             text/plain:
               schema:
                 type: string 
-  /contacts/{entryId}/addresses:
+  /contacts/{contactId}/addresses:
     get:
       summary: Represents all addresses in a contact
-      description: Returns all the addresses for the selected entryId. If there is no such contact, it returns 404.
+      description: Returns all the addresses for the selected contactId. If there is no such contact, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
       responses:
         '200':
           description: OK
@@ -496,7 +496,7 @@ paths:
       summary: Creates an address in a contact
       description: Creates a new address in the selected contact. When an address is created, a Location header is returned. It provides the URL where the newly created address can be accessed.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
       requestBody:
         required: true
         content:
@@ -541,7 +541,7 @@ paths:
               schema:
                 type: string
         '5XX':
-          description: SERVER ERROR
+          description: Unexpected error
           content:
             application/json:
               schema:
@@ -551,13 +551,13 @@ paths:
                 $ref: '#/components/schemas/Error'
             text/plain:
               schema:
-                type: string
-  /contacts/{entryId}/addresses/{addressId}:
+                type: string 
+  /contacts/{contactId}/addresses/{addressId}:
     get:
       summary: Represents an address in a contact
-      description: Returns a single address for the selected addressId, associated with the entryId. If there is no such address, it returns 404.
+      description: Returns a single address for the selected addressId, associated with the contactId. If there is no such address, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/addressId'
       responses:
         '200':
@@ -600,7 +600,7 @@ paths:
       summary: Updates an address in a contact
       description: Updates an existing address; if an address for the provided identifier does not exist, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/addressId'
       requestBody:
         required: true
@@ -639,7 +639,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-            application/xml:
+            text/xml:
               schema:
                 $ref: '#/components/schemas/Error'
             text/plain:
@@ -661,7 +661,7 @@ paths:
       summary: Deletes an address in a contact
       description: Deletes a existing address; if an address with the provided identifier does not exist, it returns 404.
       parameters:
-        - $ref: '#/components/parameters/entryId'
+        - $ref: '#/components/parameters/contactId'
         - $ref: '#/components/parameters/addressId'
       responses:
         '204':
@@ -693,9 +693,9 @@ paths:
 
 components:
   parameters:
-    entryId:
+    contactId:
       in: path
-      name: entryId
+      name: contactId
       schema:
         type: integer
         minimum: 1
@@ -717,47 +717,62 @@ components:
         minimum: 1
       required: true
       description: Numeric ID of the address
+
   responses:
     BadRequest:
       description: Bad Request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/Error'
+          text/plain:
+          schema:
+            type: string
     NotFound:
       description: Not Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+        text/xml:
+          schema:
+            $ref: '#/components/schemas/Error'
+        text/plain:
+          schema:
+            type: string
     UnexpectedError:
       description: Unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/xml:
-              schema:
-                $ref: '#/components/schemas/Error'
-            text/plain:
-              schema:
-                type: string 
+      content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Error'
+          text/xml:
+            schema:
+              $ref: '#/components/schemas/Error'
+          text/plain:
+            schema:
+              type: string 
+
   schemas:
     Contact:
       type: object
       properties:
+        contactId:
+            type: integer
+            minimum: 1
+            readOnly: true
+            example: 2
+        createdAt:
+            type: string
+            readOnly: true
+            example: 2018-07-24T22:52:24.000Z
+        updatedAt:
+            type: string
+            readOnly: true
+            example: 2018-07-24T22:52:24.000Z
         Names:
           $ref: '#/components/schemas/Names'
         Addresses:

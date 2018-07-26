@@ -202,9 +202,6 @@
     <Content Include="public\swagger.json">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="swagger.yaml">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="TEMPLATE.env">
       <SubType>Code</SubType>
     </Content>

@@ -63,7 +63,7 @@ module.exports = (Name) => {
     return Name.addOne(req.body, req.entry.id)
       .then((results) => {
         // URI locattion header
-        res.location(`/api/v1.0/contacts/${req.entry.entryId}/names/${results.dataValues.nameId}`);
+        res.location(`/api/v1.0/contacts/${req.entry.contactId}/names/${results.dataValues.nameId}`);
         view(req, res, results, 201);
       })
       .catch(err => view(req, res, err.message, 400));

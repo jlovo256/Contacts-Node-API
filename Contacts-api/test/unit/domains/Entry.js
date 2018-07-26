@@ -27,7 +27,7 @@ module.exports = ((chai, expect) => {
             Addresses);
           expect(entry).to.have.property('id');
           expect(entry).to.have.property('dataValues');
-          expect(entry.dataValues).to.have.property('entryId');
+          expect(entry.dataValues).to.have.property('contactId');
           expect(entry.dataValues).to.have.property('createdAt');
           expect(entry.dataValues).to.have.property('updatedAt');
           expect(entry.dataValues).to.have.property('Names');
