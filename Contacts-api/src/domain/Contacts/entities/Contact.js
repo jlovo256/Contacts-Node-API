@@ -12,7 +12,7 @@ const EntitySuperClass = require('./EntitySuperClass');
  * @param {Array} Addresses
  * @returns {Entry}
  * */
-class Entry extends EntitySuperClass {
+class Contact extends EntitySuperClass {
   constructor(id, contactId, createdAt, updatedAt, Names, Addresses) {
     super(id, {
       contactId,
@@ -21,8 +21,8 @@ class Entry extends EntitySuperClass {
       Names,
       Addresses,
     });
-    this.nameSingular = 'Entry';
-    this.namePlural = 'Entries';
+    this.nameSingular = 'Contact';
+    this.namePlural = 'Contacts';
   }
 }
-module.exports = Entry;
+module.exports = Contact;

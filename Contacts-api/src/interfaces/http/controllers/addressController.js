@@ -13,21 +13,6 @@ const { view } = require(path.join(appRoot, 'src/interfaces/http/views/view'));
  */
 module.exports = (Address) => {
   /**
-   * Used by validators
-   * @type {Array}
-   * */
-  const publicParams = [
-    'primary',
-    'addressL1',
-    'addressL2',
-    'city',
-    'state',
-    'zipcode',
-    'country',
-  ];
-  module.exports.publicParams = publicParams;
-
-  /**
    * Middleware that needs model/repo access
    * @param {Request} req
    * @param {Response} res

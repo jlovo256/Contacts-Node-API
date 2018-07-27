@@ -3,7 +3,7 @@
 const Server = require('./Server');
 
 module.exports = ((config, logger) => {
-  const router = require('./routers')(logger); /* eslint-disable-line global-require */
+  const router = require('./router')(logger); /* eslint-disable-line global-require */
 
   const server = new Server({
     config,

@@ -3,12 +3,12 @@
 const path = require('path');
 const appRoot = require('app-root-path').toString();
 const Promise = require('bluebird');
-const Entry = require(path.join(appRoot, 'src/domain/Contacts/entities/Entry'));
+const Contact = require(path.join(appRoot, 'src/domain/Contacts/entities/Contact'));
 
 /**
- * Takes dataValues of a Sequelize object and converts them into an Entry object
- *
- * @param {Promise} Address
+ * Takes dataValues of a Sequelize object and converts them into an Contact object
+ * contact is the api route, but the table is entry in the db
+ * @param {Promise} Contact
  */
 function toEntity({ dataValues }) {
   const {
@@ -22,7 +22,7 @@ function toEntity({ dataValues }) {
   const Addresses = [];
 
   return Promise.try(() => {
-    return new Entry(
+    return new Contact(
       id,
       entryId,
       created_at,
@@ -84,15 +84,15 @@ module.exports.findByIdPrimaryOpts = findByIdPrimaryOpts;
 
 
 /**
- *
+ * contact is the api route, but the table is entry in the db
  * @param {number} nameId
  * @returns {Promise}
  */
-function findByModelIdOpts(entryId) {
+function findByModelIdOpts(contactId) {
   return Promise.try(() => {
     return {
       where: {
-        entryId,
+        entryId: contactId,
       },
       rejectOnEmpty: true,
     };
@@ -101,16 +101,16 @@ function findByModelIdOpts(entryId) {
 module.exports.findByModelIdOpts = findByModelIdOpts;
 
 /**
- *
- * @param {number} entryId
+ * contact is the api route, but the table is entry in the db
+ * @param {number} ContactId
  * @param {number} id
  * @returns {Promise}
  */
-function findByBothIdsOpts(entryId, id) {
+function findByBothIdsOpts(contactId, id) {
   return Promise.try(() => {
     return {
       where: {
-        entryId,
+        entryId: contactId,
         id,
       },
       rejectOnEmpty: true,

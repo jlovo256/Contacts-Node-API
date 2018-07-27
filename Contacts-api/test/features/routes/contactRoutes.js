@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 
 module.exports = ((server, chai, expect) => {
-  describe('Entries Routes', () => {
+  describe('Contacts Routes', () => {
     describe('/GET Contact List text/plain', () => {
       it('should get all the contacts', (done) => {
         chai.request(server)
@@ -57,23 +57,23 @@ module.exports = ((server, chai, expect) => {
             expect(res.body).to.all.have.property('updatedAt');
             expect(res.body).to.all.have.property('Names')
               .that.is.an('array');
-            res.body.forEach((entry) => {
-              expect(entry.Names).to.all.have.property('nameId');
-              expect(entry.Names).to.all.have.property('honorific');
-              expect(entry.Names).to.all.have.property('firstName');
-              expect(entry.Names).to.all.have.property('middleName');
-              expect(entry.Names).to.all.have.property('lastName');
+            res.body.forEach((contact) => {
+              expect(contact.Names).to.all.have.property('nameId');
+              expect(contact.Names).to.all.have.property('honorific');
+              expect(contact.Names).to.all.have.property('firstName');
+              expect(contact.Names).to.all.have.property('middleName');
+              expect(contact.Names).to.all.have.property('lastName');
             });
             expect(res.body).to.all.have.property('Addresses')
               .that.is.an('array');
-            res.body.forEach((entry) => {
-              expect(entry.Addresses).to.all.have.property('addressId');
-              expect(entry.Addresses).to.all.have.property('addressL1');
-              expect(entry.Addresses).to.all.have.property('addressL2');
-              expect(entry.Addresses).to.all.have.property('city');
-              expect(entry.Addresses).to.all.have.property('state');
-              expect(entry.Addresses).to.all.have.property('zipcode');
-              expect(entry.Addresses).to.all.have.property('country');
+            res.body.forEach((contact) => {
+              expect(contact.Addresses).to.all.have.property('addressId');
+              expect(contact.Addresses).to.all.have.property('addressL1');
+              expect(contact.Addresses).to.all.have.property('addressL2');
+              expect(contact.Addresses).to.all.have.property('city');
+              expect(contact.Addresses).to.all.have.property('state');
+              expect(contact.Addresses).to.all.have.property('zipcode');
+              expect(contact.Addresses).to.all.have.property('country');
             });
             done();
           })
@@ -119,8 +119,8 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/POST Create Entry text/plain', () => {
-      it('create an entry', (done) => {
+    describe('/POST Create Contact text/plain', () => {
+      it('create a contact', (done) => {
         chai.request(server)
           .post('/api/v1.0/contacts')
           .set('Accept', 'text/plain')
@@ -176,8 +176,8 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/POST Create Entry application/json', () => {
-      it('create an entry', (done) => {
+    describe('/POST Create Contact application/json', () => {
+      it('create a contact', (done) => {
         chai.request(server)
           .post('/api/v1.0/contacts')
           .set('Content-Type', 'application/json')
@@ -236,7 +236,7 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/PUT Api Entries', () => {
+    describe('/PUT Api Contacts', () => {
       it('should return 405 status and Allow Header', (done) => {
         chai.request(server)
           .put('/api/v1.0/contacts')
@@ -251,8 +251,8 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/GET Entry Default text/plain', () => {
-      it('should get the entry with associated objects', (done) => {
+    describe('/GET Contact text/plain', () => {
+      it('should get the contact with associated objects', (done) => {
         chai.request(server)
           .get('/api/v1.0/contacts/1')
           .set('Accept', 'text/plain')
@@ -287,8 +287,8 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/GET Entry Default text/xml', () => {
-      it('should get the entry with associated objects', (done) => {
+    describe('/GET Contact text/xml', () => {
+      it('should get the contact with associated objects', (done) => {
         chai.request(server)
           .get('/api/v1.0/contacts/1')
           .set('Accept', 'text/xml')
@@ -323,8 +323,8 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/GET Entry Default application/json', () => {
-      it('should get the entry with associated objects', (done) => {
+    describe('/GET Contact Default application/json', () => {
+      it('should get the contact with associated objects', (done) => {
         chai.request(server)
           .get('/api/v1.0/contacts/1')
           .set('Accept', 'application/json')
@@ -361,7 +361,7 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/POST Api Entries/:id', () => {
+    describe('/POST Api contacts/:id', () => {
       it('should return 405 status and Allow Header', (done) => {
         chai.request(server)
           .post('/api/v1.0/contacts/1')
@@ -376,8 +376,8 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/GET Entry Detail text/plain', () => {
-      it('should get the entry with primary associations', (done) => {
+    describe('/GET Contact Primary text/plain', () => {
+      it('should get the contact with primary associations', (done) => {
         chai.request(server)
           .get('/api/v1.0/contacts/1/primary')
           .set('Accept', 'text/plain')
@@ -413,8 +413,8 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/GET Entry Detail application/json', () => {
-      it('should get the entry with primary associations', (done) => {
+    describe('/GET Contact Primary application/json', () => {
+      it('should get the Contact with primary associations', (done) => {
         chai.request(server)
           .get('/api/v1.0/contacts/1/primary')
           .set('Accept', 'application/json')
@@ -453,7 +453,7 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/POST Api Entries/:id/detail', () => {
+    describe('/POST Api contacts/:id/primary', () => {
       it('should return 405 status and Allow Header', (done) => {
         chai.request(server)
           .post('/api/v1.0/contacts/1/primary')
@@ -468,9 +468,9 @@ module.exports = ((server, chai, expect) => {
       });
     });
 
-    describe('/DELETE Delete Entry', () => {
+    describe('/DELETE Delete Contact', () => {
       // get factories plugged into here first
-      it('should delete an entry');
+      it('should delete an contact');
     });
   });
 });

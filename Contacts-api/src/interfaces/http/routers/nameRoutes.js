@@ -4,7 +4,6 @@ const router = require('express').Router({ mergeParams: true });
 
 // controller
 const {
-  publicParams,
   validateNameId,
   createName,
   retrieveNames,
@@ -12,9 +11,8 @@ const {
   updateName,
   deleteName,
 } = require('../controllers').NameController;
-const {
-  onlyTheseMethods,
-} = require('../controllers').ContactController;
+// errors
+const onlyTheseMethods = require('../errors/onlyTheseMethods');
 // middleware
 const {
   stopIfErrors,
@@ -29,6 +27,18 @@ const {
 /**
  * Subrouter for Names
  */
+
+/**
+ * Used by validators
+ * @type {Array}
+ * */
+const publicParams = [
+  'primary',
+  'honorific',
+  'firstName',
+  'middleName',
+  'lastName',
+];
 
 router.param('nameId', validateNameId);
 

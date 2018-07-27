@@ -4,7 +4,6 @@ const router = require('express').Router({ mergeParams: true });
 
 // controller
 const {
-  publicParams,
   validateAddressId,
   createAddress,
   retrieveAddresses,
@@ -12,9 +11,8 @@ const {
   updateAddress,
   deleteAddress,
 } = require('../controllers/').AddressController;
-const {
-  onlyTheseMethods,
-} = require('../controllers').ContactController;
+// errors
+const onlyTheseMethods = require('../errors/onlyTheseMethods');
 // middleware
 const {
   stopIfErrors,
@@ -29,6 +27,20 @@ const {
 /**
  * Subrouter for Addresses
  */
+
+/**
+ * Used by validators
+ * @type {Array}
+ * */
+const publicParams = [
+  'primary',
+  'addressL1',
+  'addressL2',
+  'city',
+  'state',
+  'zipcode',
+  'country',
+];
 
 router.param('addressId', validateAddressId);
 

@@ -39,13 +39,22 @@
     <Compile Include="src\app.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\domain\Contacts\aggregates\Contact.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\domain\Contacts\aggregates\ContactPrimary.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\domain\Contacts\aggregates\ContactsAll.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\domain\Contacts\factories\ContactFactory.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="src\interfaces\http\controllers\addressController.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\interfaces\http\controllers\contactController.js">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="src\interfaces\http\controllers\entryController.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\domain\Contacts\utils\generateNum.js">
@@ -55,6 +64,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\interfaces\http\controllers\nameController.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\interfaces\http\errors\onlyTheseMethods.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\interfaces\http\errors\testErrorHandler.js" />
@@ -76,7 +88,7 @@
     <Compile Include="src\domain\Contacts\entities\Address.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\domain\Contacts\entities\Entry.js">
+    <Compile Include="src\domain\Contacts\entities\Contact.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\domain\Contacts\entities\EntitySuperClass.js">
@@ -91,7 +103,7 @@
     <Compile Include="src\infrastructure\repositories\sequelizeRepos\addressMapper.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\infrastructure\repositories\sequelizeRepos\entryMapper.js">
+    <Compile Include="src\infrastructure\repositories\sequelizeRepos\contactMapper.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\domain\Contacts\entities\Name.js">
@@ -101,10 +113,10 @@
     <Compile Include="src\infrastructure\repositories\sequelizeRepos\nameMapper.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\interfaces\http\routers\addressesRoutes.js" />
-    <Compile Include="src\interfaces\http\routers\entriesRoutes.js" />
-    <Compile Include="src\interfaces\http\routers\namesRoutes.js" />
-    <Compile Include="src\interfaces\http\routers\apiRoutes.js">
+    <Compile Include="src\interfaces\http\routers\addressRoutes.js" />
+    <Compile Include="src\interfaces\http\routers\contactRoutes.js" />
+    <Compile Include="src\interfaces\http\routers\nameRoutes.js" />
+    <Compile Include="src\interfaces\http\routers\index.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\interfaces\http\views\view.js">
@@ -128,7 +140,7 @@
     <Compile Include="src\interfaces\http\index.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\interfaces\http\routers\index.js">
+    <Compile Include="src\interfaces\http\router.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\interfaces\http\Server.js">
@@ -153,10 +165,10 @@
     <Compile Include="test\features\routes\addressRoutes.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="test\features\routes\entriesRoutes.js">
+    <Compile Include="test\features\routes\contactRoutes.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="test\features\routes\namesRoutes.js">
+    <Compile Include="test\features\routes\nameRoutes.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="test\features\routes\routes.js">
@@ -218,7 +230,10 @@
   <ItemGroup>
     <Folder Include="src\domain\" />
     <Folder Include="src\domain\Contacts\entities\" />
-    <Folder Include="src\domain\Contacts\validator\" />
+    <Folder Include="src\domain\Contacts\aggregates\" />
+    <Folder Include="src\domain\Contacts\factories\" />
+    <Folder Include="src\domain\Contacts\valueObjects\" />
+    <Folder Include="src\domain\Contacts\validators\" />
     <Folder Include="src\domain\Contacts\" />
     <Folder Include="src\interfaces\http\controllers\" />
     <Folder Include="src\domain\Contacts\utils\" />
