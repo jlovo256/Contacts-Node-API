@@ -9,7 +9,7 @@ const { view } = require(path.join(appRoot, 'src/interfaces/http/views/view'));
 const contactFactory = require(path.join(appRoot, 'src/domain/Contacts/factories/ContactFactory'));
 // aggregate Contacts
 const getContacts = require(path.join(appRoot, 'src/domain/Contacts/aggregates/ContactsAll'));
-const getContact = require(path.join(appRoot, 'src/domain/Contacts/aggregates/Contact'));
+const getContact = require(path.join(appRoot, 'src/domain/Contacts/aggregates/ContactAggregate'));
 const getContactPrimary = require(path.join(appRoot, 'src/domain/Contacts/aggregates/ContactPrimary'));
 
 /**
@@ -79,7 +79,16 @@ module.exports = (Contact) => {
    * @returns {Function} view
    */
   function retrieveAll(req, res) {
-    return getContacts()
+    // get offset from user if set and a postive integer, otherwise use default of 0
+    const offset = (req.query && (parseInt(req.query.offset, 10) >= 0))
+      ? parseInt(req.query.offset, 10) : 0;
+    // get limit from user if set and a postive integer and less than 100,
+    // otherwise use default of 10
+    const limit = ((parseInt((req.query && req.query.limit), 10) >= 0)
+      && ((parseInt(req.query.limit, 10) <= 100)))
+      ? parseInt(req.query.limit, 10) : 10;
+
+    return getContacts(offset, limit)
       .then((contacts) => {
         if (contacts instanceof Error) {
           throw new Error('error retrieving contacts');

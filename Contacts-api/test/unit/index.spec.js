@@ -12,7 +12,7 @@ const { expect } = chai;
 /* eslint-disable */
 
 describe('Contact-api Unit Tests', function () {
-  require('./domains/Entry')(chai, expect);
+  require('./domains/Contact')(chai, expect);
   require('./domains/Name')(chai, expect);
   require('./domains/Address')(chai, expect);
 });

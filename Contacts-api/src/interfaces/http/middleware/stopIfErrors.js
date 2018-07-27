@@ -7,12 +7,12 @@ const { validationResult } = require('express-validator/check');
  * @param {Response} res
  * @param {Function} next
  */
-const stopIfErrors = ((req, res, next) => {
+function stopIfErrors(req, res, next) {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     res.status(400);
     return next(errors.array());
   }
   return next();
-});
-module.exports.stopIfErrors = stopIfErrors;
+}
+module.exports = stopIfErrors;

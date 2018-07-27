@@ -6,19 +6,21 @@ const router = require('express').Router();
  * Subrouter for API
  */
 
-// controllers
-const {
-  helloContacts,
-} = require('../controllers');
 // errors
 const onlyTheseMethods = require('../errors/onlyTheseMethods');
-// sub-routers
-const contactRouter = require('./contactRoutes');
 
-router.route('/')
-  .get(helloContacts)
-  .all(onlyTheseMethods('GET'));
+function createRouter(controller, contactRouter) {
+  // controllers
+  const {
+    helloContacts,
+  } = controller;
 
-router.use('/contacts', contactRouter);
+  router.route('/')
+    .get(helloContacts)
+    .all(onlyTheseMethods('GET'));
 
-module.exports = router;
+  router.use('/contacts', contactRouter);
+
+  return router;
+}
+module.exports = createRouter;

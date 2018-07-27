@@ -63,7 +63,16 @@ module.exports = (Address) => {
    * @returns {Function}
    */
   function retrieveAddresses(req, res) {
-    return Address.getAllById(req.entry.id)
+    // get offset from user if set and a postive integer, otherwise use default of 0
+    const offset = (req.query && (parseInt(req.query.offset, 10) >= 0))
+      ? parseInt(req.query.offset, 10) : 0;
+    // get limit from user if set and a postive integer and less than 100,
+    // otherwise use default of 10
+    const limit = ((parseInt((req.query && req.query.limit), 10) >= 0)
+      && ((parseInt(req.query.limit, 10) <= 100)))
+      ? parseInt(req.query.limit, 10) : 10;
+
+    return Address.getAllByIdPag(req.entry.id, offset, limit)
       .then(results => view(req, res, results, 200))
       .catch(err => view(req, res, err.message, 404));
   }

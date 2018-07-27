@@ -15,15 +15,14 @@ const errorHandler = require('./errors/errorHandler');
 const devErrorHandler = require('./errors/devErrorHandler');
 const testErrorHandler = require('./errors/testErrorHandler');
 const onlyTheseMethods = require('./errors/onlyTheseMethods');
-// controllers
-const {
-  helloContacts,
-} = require('./controllers');
-// sub-routers
-const apiRouter = require('./routers');
 
-module.exports = ((logger) => {
+
+function createRouter(logger, controllers, apiRouter) {
   const router = Router();
+  // get needed controller methods
+  const {
+    helloContacts,
+  } = controllers;
 
   if (process.env.NODE_ENV === 'development') {
     router.use(devLogger(logger));
@@ -59,4 +58,5 @@ module.exports = ((logger) => {
   router.use(errorHandler(logger));
 
   return router;
-});
+}
+module.exports = createRouter;

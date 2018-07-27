@@ -13,11 +13,11 @@ const {
   AddressRepo,
 } = require(path.join(appRoot, 'src/infrastructure/repositories/index.js'));
 
-function getAllContactsFromDatabase() {
+function getAllContactsFromDatabase(offset, limit) {
   // for creating the contact to send back
   let contacts = {};
 
-  return ContactRepo.getAll()
+  return ContactRepo.getAll(offset, limit)
     .then((entries) => {
       if (!entries) {
         return [];

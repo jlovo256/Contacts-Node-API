@@ -17,7 +17,7 @@ const {
   AddressRepo,
 } = require(path.join(appRoot, 'src/infrastructure/repositories/index.js'));
 
-function EntryFactory(body) {
+function ContactFactory(body) {
   let names;
   let addresses;
 
@@ -70,4 +70,4 @@ function EntryFactory(body) {
       return err;
     });
 }
-module.exports = EntryFactory;
+module.exports = ContactFactory;

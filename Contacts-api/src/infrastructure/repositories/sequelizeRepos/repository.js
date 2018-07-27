@@ -16,6 +16,7 @@ class Respository {
     toEntity,
     toDatabase,
     findByIdOpts,
+    findByIdPagOpts,
     findByIdPrimaryOpts,
     findByModelIdOpts,
     findByBothIdsOpts,
@@ -24,6 +25,7 @@ class Respository {
     this.toEntity = toEntity;
     this.toDatabase = toDatabase;
     this.findByIdOpts = findByIdOpts;
+    this.findByIdPagOpts = findByIdPagOpts;
     this.findByIdPrimaryOpts = findByIdPrimaryOpts;
     this.findByModelIdOpts = findByModelIdOpts;
     this.findByBothIdsOpts = findByBothIdsOpts;
@@ -40,8 +42,8 @@ class Respository {
       });
   }
 
-  getAll() {
-    return this.Model.findAll()
+  getAll(offset, limit) {
+    return this.Model.findAll({ offset, limit })
       .then(sequelArray => Promise.all(sequelArray.map(this.toEntity)))
       .then(result => result)
       .catch(err => err);
@@ -49,6 +51,17 @@ class Respository {
 
   getAllById(id) {
     return this.findByIdOpts(id)
+      .then(optionsObj => this.Model.findAll(optionsObj))
+      .then(sequelArray => Promise.all(sequelArray.map(this.toEntity)))
+      .then(result => result)
+      .catch((err) => {
+        logger.warn(err);
+        return err;
+      });
+  }
+
+  getAllByIdPag(id, offset, limit) {
+    return this.findByIdPagOpts(id, offset, limit)
       .then(optionsObj => this.Model.findAll(optionsObj))
       .then(sequelArray => Promise.all(sequelArray.map(this.toEntity)))
       .then(result => result)

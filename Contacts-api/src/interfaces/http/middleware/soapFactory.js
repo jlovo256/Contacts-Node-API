@@ -14,13 +14,13 @@ const checkBody = buildCheckFunction(['body']);
  * @param {Array} params
  * @returns {Array} array of validator functions
  */
-const bodySanitizer = ((params) => {
+function bodySanitizer(params) {
   return [
     body(params)
       .trim()
-      .escape()
+      .escape(),
   ];
-});
+}
 module.exports.bodySanitizer = bodySanitizer;
 
 /**
@@ -31,21 +31,21 @@ module.exports.bodySanitizer = bodySanitizer;
  * @param {Array} innerParams
  * @returns {Array}
  */
-const bodySanitizerDeep = ((outerParam, innerParams) => {
-  let params = [];  // An array for the middleware
+function bodySanitizerDeep(outerParam, innerParams) {
+  const params = []; // An array for the middleware
 
   if (!Array.isArray(innerParams)) {
     throw new Error('not params array');
   }
-  for (let i = 0, len = innerParams.length; i < len; i++) {
+  for (let i = 0, len = innerParams.length; i < len; i += 1) {
     params.push(`${outerParam}.*.${innerParams[i]}`);
   }
   return [
     body(params)
       .trim()
-      .escape()
+      .escape(),
   ];
-});
+}
 module.exports.bodySanitizerDeep = bodySanitizerDeep;
 
 /**
@@ -56,13 +56,13 @@ module.exports.bodySanitizerDeep = bodySanitizerDeep;
   * @param {Array}
   * @returns {boolean}
   */
-const bodyValidator = ((bodyObj, params) => {
+function bodyValidator(bodyObj, params) {
   function isIncluded(element) {
     return params.includes(element);
   }
 
   return Object.keys(bodyObj).every(isIncluded);
-});
+}
 module.exports.bodyValidator = bodyValidator;
 
 /**
@@ -72,12 +72,12 @@ module.exports.bodyValidator = bodyValidator;
  * @param {Array} params
  * @returns {Array}
  */
-const putBodyValidator = ((params) => {
+function putBodyValidator(params) {
   return [
     checkBody(params)
-      .exists()
+      .exists(),
   ];
-});
+}
 module.exports.putBodyValidator = putBodyValidator;
 
 /**
@@ -85,15 +85,14 @@ module.exports.putBodyValidator = putBodyValidator;
  * @param {Array} params
  * @returns {Function} next
  */
-const checkIfValidBody = ((params) => {
-  return function (req, res, next) {
+function checkIfValidBody(params) {
+  return function innerCheckIfValidBody(req, res, next) {
     if (!bodyValidator(req.body, params)) {
       const err = new Error('Bad Param');
       res.status(400);
       return next(err);
-    } else {
-      return next();
     }
+    return next();
   };
-});
+}
 module.exports.checkIfValidBody = checkIfValidBody;

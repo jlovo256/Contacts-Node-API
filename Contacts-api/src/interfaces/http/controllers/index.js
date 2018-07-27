@@ -1,10 +1,5 @@
 'use strict';
 
-const path = require('path');
-const appRoot = require('app-root-path').toString();
-
-const Repos = require(path.join(appRoot, 'src/infrastructure/repositories/index.js'));
-
 /**
  * @module helloContacts
  * CHANGE ME, if you use this for something besides jamietudor.me
@@ -23,7 +18,7 @@ function helloContacts(req, res) {
 }
 module.exports.helloContacts = helloContacts;
 
-// connect models to controllers, export controllers
-module.exports.EntryController = require('./contactController')(Repos.ContactRepo);
-module.exports.NameController = require('./nameController')(Repos.NameRepo);
-module.exports.AddressController = require('./addressController')(Repos.AddressRepo);
+//// connect models to controllers, export controllers
+//module.exports.ContactController = require('./contactController')(Repos.ContactRepo);
+//module.exports.NameController = require('./nameController')(Repos.NameRepo);
+//module.exports.AddressController = require('./addressController')(Repos.AddressRepo);

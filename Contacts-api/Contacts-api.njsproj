@@ -39,7 +39,7 @@
     <Compile Include="src\app.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\domain\Contacts\aggregates\Contact.js">
+    <Compile Include="src\domain\Contacts\aggregates\ContactAggregate.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\domain\Contacts\aggregates\ContactPrimary.js">
@@ -51,6 +51,16 @@
     <Compile Include="src\domain\Contacts\factories\ContactFactory.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="src\domain\Contacts\valueObjects\addressline.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\domain\Contacts\valueObjects\name.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\domain\Contacts\valueObjects\primary.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\interfaces\http\controllers\Controller.js" />
     <Compile Include="src\interfaces\http\controllers\addressController.js">
       <SubType>Code</SubType>
     </Compile>
@@ -82,7 +92,7 @@
     <Compile Include="src\interfaces\http\middleware\devLogger.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\interfaces\http\middleware\index.js">
+    <Compile Include="src\interfaces\http\middleware\stopIfErrors.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="src\domain\Contacts\entities\Address.js">
@@ -113,9 +123,9 @@
     <Compile Include="src\infrastructure\repositories\sequelizeRepos\nameMapper.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="src\interfaces\http\routers\addressRoutes.js" />
-    <Compile Include="src\interfaces\http\routers\contactRoutes.js" />
-    <Compile Include="src\interfaces\http\routers\nameRoutes.js" />
+    <Compile Include="src\interfaces\http\routers\addressRouter.js" />
+    <Compile Include="src\interfaces\http\routers\contactRouter.js" />
+    <Compile Include="src\interfaces\http\routers\nameRouter.js" />
     <Compile Include="src\interfaces\http\routers\index.js">
       <SubType>Code</SubType>
     </Compile>
@@ -177,22 +187,10 @@
     <Compile Include="test\setup.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="test\support\factories\address-factory.js">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test\support\factories\entry-factory.js">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test\support\factories\index.js">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test\support\factories\name-factory.js">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="test\unit\domains\Address.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="test\unit\domains\Entry.js">
+    <Compile Include="test\unit\domains\Contact.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="test\unit\domains\Name.js">
@@ -256,12 +254,9 @@
     <Folder Include="src\infrastructure\sequelize\" />
     <Folder Include="src\infrastructure\sequelize\seeds\" />
     <Folder Include="test\" />
-    <Folder Include="test\features\controllers\" />
     <Folder Include="test\features\" />
     <Folder Include="test\features\routes\" />
     <Folder Include="test\unit\" />
-    <Folder Include="test\support\" />
-    <Folder Include="test\support\factories\" />
     <Folder Include="test\unit\domains\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
