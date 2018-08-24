@@ -3,9 +3,9 @@
 A simple demostration of a Node API.  <a href="https://github.com/jtdarkly/Contacts-Node-API/blob/master/Contacts-api/README.md">Yeah, but what is it?</a>  <a href="https://jamietudor.me/api-docs/">Swagger UI</a>.
 
 ### Important Things to Note
-- There is a Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file">solution file</a>, but it will not load in the Mac version or Visual Studio Code.  Loading in another Windows version is untested.
+- Only relevant if and only if, you want to load the files using Visual Studio: There is a Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file">solution file</a>, but THE SOLUTION FILE did not load when tested in the Mac version or Visual Studio Code.  Loading in another Windows version is untested.  (I am not talking about running the app itself, I ran actually run it in the Visual Studio IDE.  I use npm on the command line in Windows, Mac, and Linux.)
 - You need a .env file.  Included in the project is TEMPLATE.env, which has all the variables you need.  .gitignore is already set to ignore .env files.
-- Windows loves its own encoding and line-endings.  In theory, the <a href="https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options">.editorconfig file and extension</a> tells the editor to save the .js and .json files in utf-8, with LF endings.  It works some of the time, but not all of the time.
+- Windows loves its own encoding and line-endings.  In theory, the <a href="https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options">.editorconfig file and extension</a> tells the editor to save the .js and .json files in utf-8, with LF endings.  It works some of the time, but not all of the time.  This may not affect you at all.
 
 ## Features
 
@@ -14,16 +14,6 @@ A simple demostration of a Node API.  <a href="https://github.com/jtdarkly/Conta
   <dt>Restful API with CRUD Http Methods</dt>
   <dd>
     Designed with <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">Restful API</a> principles, using <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> methods: POST, GET, PUT, etc.  Makes logic of requests URL's easy to understand.
-  </dd>
-
-  <dt>Design and Architecture</dt>
-  <dd>
-    Uses a 3-layer Architecture Design.  All the things are bundled into src.  Domain corresponds with domain/entities or application/core/logic/business tier.  Domains are domain-ish, but closer to table modules at this point.  Infrastructure corresponds with the data tier, and resources/backing services.  Interfaces corresponds with the presentation tier, which uses model-view-presenter.
-  </dd>
-
-  <dt>Ideas and Inspiration</dt>
-  <dd>
-    Design goals: <a href="https://12factor.net/">12 Factor</a> and <a href="https://content.pivotal.io/blog/beyond-the-twelve-factor-app">Beyond</a>.  <a href="https://en.wikipedia.org/wiki/Multitier_architecture">Multitier architecture</a>: <a href="https://github.com/talyssonoc/node-api-boilerplate/wiki/Folder-structure">folder structure</a>, <a href="https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420/">domain driven</a>, and <a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html">clean</a>.  Working on those <a href="https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/">domains</a>.  <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter">MVP</a> for presentation. And of course, the classic <a href="https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/">Gang of Four</a> for design patterns.
   </dd>
 
   <dt>Express Web Server</dt>
@@ -68,7 +58,7 @@ A simple demostration of a Node API.  <a href="https://github.com/jtdarkly/Conta
 
   <dt>Visual Studio Solution</dt>
   <dd>
-    There is also a solution file, because I have been working in Visual Studio 2017 (<a href="https://code.visualstudio.com/docs/editor/intellisense">Intellisense</a> is Microsoft's gift to the world), with a Node extentsion; I do not believe it will work in Visual Studio Code or the Mac version of Visual Studio.  Read more about solution files <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file">here</a>.
+    There is also a solution file, because I have been working in Visual Studio 2017, with a Node extentsion; I do not believe THE SOLUTION FILE will work in Visual Studio Code or the Mac version of Visual Studio (running with npm worked when tested in Windows, Mac, and Linux).  Read more about solution files <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file">here</a>.
   </dd>
 
   <dt>Logging</dt>
@@ -78,7 +68,7 @@ A simple demostration of a Node API.  <a href="https://github.com/jtdarkly/Conta
 
   <dt>ESLint</dt>
   <dd>
-    <a href="https://eslint.org/">ESLint</a> for code that isn't terrible.  Mostly <a href="https://github.com/airbnb/javascript#table-of-contents">Airbnb</a> style.  Never gonna give up semicolons.  I am familar with <a href="http://inimino.org/~inimino/blog/javascript_semicolons">semicolon insertion</a>,but I started as a Java/C++ programmer.  So to me, not putting semicolons in a C-syntax language would be like not zipping up my pants.  It feels wrong and weird.  I also like oxford commas and double-spaces; you can pry them all from my cold dead hands.
+    <a href="https://eslint.org/">ESLint</a> for code that isn't terrible.  Mostly <a href="https://github.com/airbnb/javascript#table-of-contents">Airbnb</a> style.  
   </dd>
 
 </dl>
