@@ -3,9 +3,9 @@
 A simple demostration of a Node API.  <a href="https://github.com/jtdarkly/Contacts-Node-API/blob/master/Contacts-api/README.md">Yeah, but what is it?</a>  <a href="https://jamietudor.me/api-docs/">Swagger UI</a>.
 
 ### Important Things to Note
-- Only relevant if and only if, you want to load the files using Visual Studio: There is a Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file">solution file</a>, but THE SOLUTION FILE did not load when tested in the Mac version or Visual Studio Code.  Loading in another Windows version is untested.  (I am not talking about running the app itself, I ran actually run it in the Visual Studio IDE.  I use npm on the command line in Windows, Mac, and Linux.)
+- Only relevant if and only if, you want to load the files using Visual Studio: There is a Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/solution-dot-sln-file">solution file</a>, but THE SOLUTION FILE did not load when tested in the Mac version or Visual Studio Code.  Loading in another Windows version is untested.  (I am not talking about running the app itself, I rarely ran it in the Visual Studio IDE.  I use npm on the command line in Windows, Mac, and Linux.)
 - You need a .env file.  Included in the project is TEMPLATE.env, which has all the variables you need.  .gitignore is already set to ignore .env files.
-- Windows loves its own encoding and line-endings.  In theory, the <a href="https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options">.editorconfig file and extension</a> tells the editor to save the .js and .json files in utf-8, with LF endings.  It works some of the time, but not all of the time.  This may not affect you at all.
+- Windows loves its own encoding and line-endings.  In theory, the <a href="https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options">.editorconfig file and extension</a> tells the editor to save the .js and .json files in utf-8, with LF endings.  The editorconfig works some of the time, but not all of the time.  This may not affect you at all.
 
 ## Features
 
